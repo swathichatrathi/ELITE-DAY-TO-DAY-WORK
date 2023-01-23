@@ -9,9 +9,8 @@ DAY 1
 //And then iterate through the dictionary key,value pairs : if the value is 1 that means it is the unique character, so we return the index of such character
 //Even after iterating through all the elements of the dictionary, if we havent find such element then we return -1.
 
-
-
 //SOLUTION IN PYTHON
+
 
 def firstUniqChar(self, s: str) -> int:
         dic={}
@@ -22,18 +21,22 @@ def firstUniqChar(self, s: str) -> int:
                 return s.index(x)
         return -1
 
+
+
+
+
 2) LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS 
 
 //Here our job is to find the substring of a given string with two conditions that is it should be the longest one which has no repeating characters, that means all the characters in the substring should be unique.
+
 //Our solution approach is:
 //Maintain a dictionary which stores all the unique characters
 //Maintain two pointers i,j : move j till all the characters upto now are unique and if yes update the maximum length
 //If found a repeating character then move the window by removing elements in the dictionary.
 //Our output will be the longest substring without repeating characters
 
-
-
 //SOLUTION IN PYTHON
+
 
 def lengthOfLongestSubstring(self, s: str) -> int:
         if s==" ":
@@ -60,5 +63,35 @@ def lengthOfLongestSubstring(self, s: str) -> int:
                     j+=1
             return res
             
-            
 
+
+
+
+3)STRING TO INTEGER 
+
+//SOLUTIONIN PYTHON 
+
+
+    def myAtoi(self, s: str) -> int:
+        sign,num,flag=1,0,0
+        s=s.strip()
+        if len(s)==0:
+            return 0
+        if s[0] == "-":
+            sign = -1
+        for i in s:
+            if i.isdigit():
+                num=num*10+int(i)
+                flag=1
+            elif(i=="+" or i=="-")and(flag == 0):
+                flag = 1
+                pass
+            else:
+                break
+        num = num*sign
+        if (-2**31<=num<=(2**31)-1): 
+            return num
+        if num<0:
+            return -2**31
+        else:
+            return 2**31-1
