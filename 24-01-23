@@ -35,3 +35,81 @@ class Solution {
         inorder(root.right);
     }
 }
+
+
+
+
+
+2)BiNARY TREE PREORDER TRAVERSAL
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    ArrayList<Integer> list = new ArrayList<>();
+    public List<Integer> preorderTraversal(TreeNode root){
+        TreeNode x=root;
+        preorder(x);
+        return list;
+    }
+    public void preorder(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        list.add(root.val);
+        preorder(root.left);
+        preorder(root.right);
+    }
+}
+
+
+
+3)BINARY TREE POSTORDER TRAVERSAL 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    ArrayList<Integer> list = new ArrayList<>();
+    public List<Integer> postorderTraversal(TreeNode root){
+        TreeNode x=root;
+        postorder(x);
+        return list;
+    }
+    public void postorder(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        postorder(root.left);
+        postorder(root.right);
+        list.add(root.val);
+    }
+}
