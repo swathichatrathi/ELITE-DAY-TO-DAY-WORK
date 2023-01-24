@@ -352,3 +352,275 @@ class Solution {
     }
 }
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10)PATH SUM 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+        if(root==null){
+            return false;
+        }
+        if(root.left==null && root.right==null && targetSum==root.val){
+            return true;
+        }
+        return hasPathSum(root.left,targetSum-root.val) || hasPathSum(root.right,targetSum-root.val);
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11)PATH SUM ||
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        List<List<Integer>> result = new LinkedList<>();
+        if(root == null) return result;
+        if(root.left == null && root.right == null) {   
+            if(root.val == targetSum) {
+                List<Integer> path = new LinkedList<>();
+                path.add(root.val);
+                result.add(path);
+            }
+        }
+        if(root.left != null) {
+            List<List<Integer>> leftPath = pathSum(root.left, targetSum-root.val);
+            for(List<Integer> path: leftPath) {
+                path.add(0, root.val);
+                result.add(path);
+            }
+        }
+        if(root.right != null) {
+            List<List<Integer>> rightPath = pathSum(root.right, targetSum-root.val);
+            for(List<Integer> path: rightPath) {
+                path.add(0, root.val);
+                result.add(path);
+            }
+        }
+        return result;
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12)CONTAINS DUPLICATE ||
+
+//SOLUTION IN JAVA 
+
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(nums[i])){
+                if(Math.abs(i-map.get(nums[i]))<=k){
+                    return true;
+                }
+                else{
+                    map.put(nums[i],i);
+                }
+            }
+            else{
+                map.put(nums[i],i);
+            }
+        }
+        return false;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+13)SUM ROOT TO LEAF NUMBERS 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<Integer> binaryTreePaths(TreeNode root) {
+        List<Integer>  list = new ArrayList<>();
+        traversal(root,"",list);
+        return list;
+    }
+    public void traversal(TreeNode root,String res,List<Integer> list){
+        if(root==null){
+            return;
+        }
+        if(root.right==null && root.left==null){
+            list.add(Integer.parseInt(res+root.val));
+        }
+        traversal(root.left,res+root.val,list);
+        traversal(root.right,res+root.val,list);
+    }
+    public int sumNumbers(TreeNode root) {
+        List<Integer> l=binaryTreePaths(root);
+        int sum=0;
+        for(int i=0;i<l.size();i++){
+            sum+=l.get(i);
+        }
+        return sum;
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+14)COUNT COMPLETE TREE NODES 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int countNodes(TreeNode root) {
+        if(root==null){
+            return 0;
+        }
+        int left=countNodes(root.left);
+        int right=countNodes(root.right);
+        return left+right+1;
+    }
+}
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+15)INVERT BINARY TREE 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public void invert(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        TreeNode temp=root.left;
+        root.left=root.right;
+        root.right=temp;
+        invert(root.left);
+        invert(root.right);
+    }
+    public TreeNode invertTree(TreeNode root) {
+        invert(root);
+        return root; 
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+16)Kth SMALLEST ELEMENT IN A BST
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    ArrayList<Integer> list = new ArrayList<>();
+    public List<Integer> inorderTraversal(TreeNode root) {
+        TreeNode x=root;
+        inorder(x);
+        return list;
+    }
+    public void inorder(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        inorder(root.left);
+        list.add(root.val);
+        inorder(root.right);
+    }
+    public int kthSmallest(TreeNode root, int k) {
+        List<Integer> l=inorderTraversal(root);
+        return l.get(k-1);
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
