@@ -1,0 +1,287 @@
+DAY 4 
+
+1)BALANCED BINARY TREE 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int height(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int l=height(root.left);
+        int r=height(root.right);
+        return Math.max(l,r)+1;
+    }
+    public boolean isBalanced(TreeNode root) {
+        if(root==null){
+            return true;
+        }
+        boolean lc=isBalanced(root.left);
+        if(lc==false){
+            return false;
+        }
+        boolean rc=isBalanced(root.right);
+        if(rc==false){
+            return false;
+        }
+        int lh=height(root.left);
+        int rh=height(root.right);
+        if(Math.abs(lh-rh)>1){
+            return false;
+        }
+        return true;
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2)DIAMETER OF A BINARY TREE 
+
+//METHOD 1: SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int height(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int l=height(root.left);
+        int r=height(root.right);
+        return Math.max(l,r)+1;
+    }
+    int dia;
+    public int diameterOfBinaryTree(TreeNode root) {
+        if(root==null){
+            return 0;
+        }
+        int lh=height(root.left);
+        int rh=height(root.right);
+        if(lh+rh>dia){
+            dia=lh+rh;
+        }
+        diameterOfBinaryTree(root.left);
+        diameterOfBinaryTree(root.right);
+        return dia;
+    }
+}
+
+//METHOD 2:SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int dia;
+    public int height(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int l=height(root.left);
+        int r=height(root.right);
+        if(l+r>dia){
+            dia=l+r;
+        }
+        return Math.max(l,r)+1;
+    }
+    public int diameterOfBinaryTree(TreeNode root) {
+        height(root);
+        return dia;
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3)BINARY TREE MAXIMUM PATH SUM 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int maxsum=Integer.MIN_VALUE;
+    public int pathsum(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int l=Math.max(0,pathsum(root.left));
+        int r=Math.max(0,pathsum(root.right));
+        int currsum=l+r+root.val;
+        if(currsum>maxsum){
+            maxsum=currsum;
+        }
+        return Math.max(l,r)+root.val;
+    }
+    public int maxPathSum(TreeNode root) {
+        if(root.left==null && root.right==null){
+            return root.val;
+        }
+        pathsum(root);
+        return maxsum;
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4)REMOVE DUPLICATES FROM SORTED LIST 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode curr=head;
+        if(head==null){
+            return head;
+        }
+        ListNode temp=head.next;
+        ListNode prev=head;
+        while(temp!=null){
+            if(temp.val==prev.val){
+                temp=temp.next;
+                prev.next=temp;
+            }
+            else{
+                prev=prev.next;
+                temp=temp.next;
+            }
+        }
+        return curr;
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5)REMOVE DUPLICATES FROM SORTED LIST ||
+
+
+//SOLUTION IN JAVA 
+
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        ListNode res=new ListNode(-1,head);
+        ListNode prev=res;
+        if(head==null){
+            return head;
+        }
+        while(head!=null){
+            if(head.next!=null && head.val==head.next.val){
+                while(head.next!=null && head.val==head.next.val){
+                    head=head.next;
+                }
+                prev.next=head.next;
+            }
+            else{
+                prev=prev.next;
+            }
+            head=head.next;
+        }
+        return res.next;
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6)MERGE SORTED ARRAY 
+
+//SOLUTION IN JAVA 
+
+class Solution {
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i=m-1;
+        int j=n-1;
+        int k=m+n-1;
+        while(j>=0)
+        {
+            if(i>=0 && nums1[i]>nums2[j])
+            {
+                nums1[k]=nums1[i];
+                k--;
+                i--;
+            }
+            else{
+                nums1[k]=nums2[j];
+                k--; 
+                j--;
+            }
+        }
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7)
