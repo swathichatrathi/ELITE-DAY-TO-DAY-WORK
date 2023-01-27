@@ -297,3 +297,113 @@ class Solution {
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+7)REVERSE INTEGER 
+
+//SOLUTION IN PYTHON 
+
+
+class Solution:
+    def reverse(self, x: int) -> int:
+        s=''
+        g=str(x)
+        if g[0]=="-":
+            s+="-"
+            g=g[1:]
+        if g[0]=="0":
+            i=0
+            while(i<len(g) and g[i]=="0"):
+                g=g[i:]
+                i+=1
+        s+=g[::-1]
+        if(-2**31<=int(s)<=2**31-1):
+            return int(s)
+        else:
+            return 0
+            
+ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+8)RANGE SUM OF BST 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int sum=0;
+    public void sum(TreeNode root,int low,int high){
+        if(low<=root.val && root.val<=high){
+            sum+=root.val;
+        }
+        if(root.left!=null){
+            sum(root.left,low,high);
+        }
+        if(root.right!=null){
+            sum(root.right,low,high);
+        }
+    }
+    public int rangeSumBST(TreeNode root, int low, int high) {
+        sum(root,low,high);
+        return sum;
+    }
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9)INCREASING ORDER SEARCH TREE 
+
+//SOLUTION IN JAVA 
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    List<Integer> list=new ArrayList<>();
+    public TreeNode increasingBST(TreeNode root) {
+        inorder(root);
+        TreeNode res=new TreeNode();
+        TreeNode temp=res;
+        for(int i=0;i<list.size();i++){
+            temp.right=new TreeNode(list.get(i));
+            temp=temp.right;
+        }
+        return res.right;
+    }
+    public void inorder(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        inorder(root.left);
+        list.add(root.val);
+        inorder(root.right);
+    }
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
