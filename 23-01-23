@@ -1,6 +1,6 @@
 DAY 1 
 
-1) FIRST UNIQUE CHARACTER IN A STRING IN PYTHON 
+1) FIRST UNIQUE CHARACTER IN A STRING
 
 //Here our job is to find the first unique character in a given string and return the index of such character if present else return -1.
 
