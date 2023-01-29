@@ -1,6 +1,6 @@
-10)BEST TIME TO BUY AND SELL STOCK 
+/* 10)BEST TIME TO BUY AND SELL STOCK 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 class Solution {
     public int maxProfit(int[] prices) {
