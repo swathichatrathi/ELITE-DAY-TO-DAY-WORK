@@ -1,6 +1,6 @@
-11)PASCALS'S TRIANGLE 
+/* 11)PASCALS'S TRIANGLE 
 
-//SOLUTION IN JAVA 
+//SOLUTION IN JAVA */
 
 class Solution {
     public List<List<Integer>> generate(int numRows) {
