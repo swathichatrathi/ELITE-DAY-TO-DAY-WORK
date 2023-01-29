@@ -1,6 +1,6 @@
-12)CONTAINS DUPLICATE ||
+/*12)CONTAINS DUPLICATE ||
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
