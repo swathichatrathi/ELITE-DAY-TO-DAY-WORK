@@ -1,6 +1,6 @@
-15)INVERT BINARY TREE 
+/*15)INVERT BINARY TREE 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
