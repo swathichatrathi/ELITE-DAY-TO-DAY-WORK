@@ -1,6 +1,6 @@
-9)VALID PALINDROME
+# 9)VALID PALINDROME
 
-//SOLUTION IN PYTHON 
+# SOLUTION IN PYTHON 
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
