@@ -1,6 +1,6 @@
-2)BiNARY TREE PREORDER TRAVERSAL
+/*2)BiNARY TREE PREORDER TRAVERSAL
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
