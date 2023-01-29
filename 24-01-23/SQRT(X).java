@@ -1,6 +1,6 @@
-9)SQRT(X) 
+/*9)SQRT(X) 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 class Solution {
     public int mySqrt(int x) {
