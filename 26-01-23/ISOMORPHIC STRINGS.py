@@ -1,6 +1,6 @@
-13)ISOMORPHIC STRINGS 
+# 13)ISOMORPHIC STRINGS 
 
-//SOLUTION IN PYTHON
+# SOLUTION IN PYTHON
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
