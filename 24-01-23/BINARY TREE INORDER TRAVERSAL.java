@@ -1,10 +1,10 @@
-DAY 2 
+/*DAY 2 
 
 1)BINARY TREE INORDER TRAVERSAL 
 
-//SOLUTION IN JAVA
+SOLUTION IN JAVA*/
 
-/**
+/*
  * Definition for a binary tree node.
  * public class TreeNode {
  *     int val;
