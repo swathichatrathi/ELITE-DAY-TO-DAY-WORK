@@ -1,6 +1,6 @@
-6)MERGE SORTED ARRAY 
+/*6)MERGE SORTED ARRAY 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
