@@ -1,6 +1,6 @@
-3)STRING TO INTEGER 
+# 3)STRING TO INTEGER 
 
-//SOLUTIONIN PYTHON 
+# SOLUTIONIN PYTHON 
 
 
     def myAtoi(self, s: str) -> int:
