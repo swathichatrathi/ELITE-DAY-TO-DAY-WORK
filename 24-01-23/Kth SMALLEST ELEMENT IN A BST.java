@@ -1,6 +1,6 @@
-16)Kth SMALLEST ELEMENT IN A BST
+/*16)Kth SMALLEST ELEMENT IN A BST
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
