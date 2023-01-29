@@ -1,6 +1,6 @@
-8)SYMMETRIC TREE 
+/*8)SYMMETRIC TREE 
 
-//SOLUTION IN JAVA 
+//SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
