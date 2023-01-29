@@ -1,6 +1,6 @@
-4)SEARCH IN A BINARY SEARCH TREE 
+/*4)SEARCH IN A BINARY SEARCH TREE 
 
-//SOLUTION IN JAVA 
+//SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
