@@ -1,6 +1,6 @@
-4)SAME TREE 
+/*4)SAME TREE 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA*/ 
 
 /**
  * Definition for a binary tree node.
