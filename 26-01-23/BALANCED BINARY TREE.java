@@ -1,8 +1,8 @@
-DAY 4 
+/*DAY 4 
 
 1)BALANCED BINARY TREE 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
