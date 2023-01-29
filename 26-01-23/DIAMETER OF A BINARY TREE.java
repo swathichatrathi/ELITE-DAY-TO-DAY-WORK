@@ -1,6 +1,6 @@
-2)DIAMETER OF A BINARY TREE 
+/* 2)DIAMETER OF A BINARY TREE 
 
-//METHOD 1: SOLUTION IN JAVA 
+METHOD 1: SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
