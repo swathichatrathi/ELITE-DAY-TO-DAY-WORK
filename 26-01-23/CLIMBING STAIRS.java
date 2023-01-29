@@ -1,6 +1,6 @@
-7)CLIMBING STAIRS 
+/* 7)CLIMBING STAIRS 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 class Solution {
     public int climbStairs(int n) {
