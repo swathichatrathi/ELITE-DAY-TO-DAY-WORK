@@ -1,6 +1,6 @@
-5)MAXIMUM DEPTH OF A BINARY TREE 
+/*5)MAXIMUM DEPTH OF A BINARY TREE 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
