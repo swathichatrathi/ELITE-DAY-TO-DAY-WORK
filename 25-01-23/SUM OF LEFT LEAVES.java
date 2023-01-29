@@ -1,6 +1,6 @@
-3)SUM OF LEFT LEAVES 
+/*3)SUM OF LEFT LEAVES 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
