@@ -1,8 +1,8 @@
-DAY 3
+/*DAY 3
 
 1)LOWEST COMMON ANCESTOR OF A BINARY TREE 
 
-//SOLUTION IN JAVA
+//SOLUTION IN JAVA*/
 
 /**
  * Definition for a binary tree node.
