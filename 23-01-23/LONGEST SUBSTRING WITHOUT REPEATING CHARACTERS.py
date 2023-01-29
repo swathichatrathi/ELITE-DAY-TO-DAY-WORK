@@ -1,14 +1,14 @@
-2) LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS 
+# 2) LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS 
 
-//Here our job is to find the substring of a given string with two conditions that is it should be the longest one which has no repeating characters, that means all the characters in the substring should be unique.
+# Here our job is to find the substring of a given string with two conditions that is it should be the longest one which has no repeating characters, that means all the characters in the substring should be unique.
 
-//Our solution approach is:
-//Maintain a dictionary which stores all the unique characters
-//Maintain two pointers i,j : move j till all the characters upto now are unique and if yes update the maximum length
-//If found a repeating character then move the window by removing elements in the dictionary.
-//Our output will be the longest substring without repeating characters
+# Our solution approach is:
+# Maintain a dictionary which stores all the unique characters
+# Maintain two pointers i,j : move j till all the characters upto now are unique and if yes update the maximum length
+# If found a repeating character then move the window by removing elements in the dictionary.
+# Our output will be the longest substring without repeating characters
 
-//SOLUTION IN PYTHON
+# SOLUTION IN PYTHON
 
 
 def lengthOfLongestSubstring(self, s: str) -> int:
