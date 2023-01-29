@@ -1,6 +1,6 @@
-6)BINARY TREE PATHS 
+/*6)BINARY TREE PATHS 
 
-//SOLUTION IN JAVA
+SOLUTION IN JAVA*/
 
 /**
  * Definition for a binary tree node.
