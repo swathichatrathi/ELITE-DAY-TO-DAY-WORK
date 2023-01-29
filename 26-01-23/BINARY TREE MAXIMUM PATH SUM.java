@@ -1,6 +1,6 @@
-3)BINARY TREE MAXIMUM PATH SUM 
+/* 3)BINARY TREE MAXIMUM PATH SUM 
 
-//SOLUTION IN JAVA 
+SOLUTION IN JAVA */
 
 /**
  * Definition for a binary tree node.
